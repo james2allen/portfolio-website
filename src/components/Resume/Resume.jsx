@@ -15,7 +15,7 @@ export const Resume = () => {
   }, []);
 
   return (
-    <div className="m-auto w-full pl-32 pt-32">
+    <div className="m-auto w-auto pl-32 pt-32">
       <Document file={resume_link}>
         <Page pageNumber={1} scale={width > 786 ? 1.7 : 0.6} />
       </Document>

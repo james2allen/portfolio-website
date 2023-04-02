@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 export const Navbar = () => {
   const [showNavbar, setShowNavbar] = useState(false);
   return (
-    <nav>
+    <nav className="fixed top-0 z-40 w-full bg-gray-900 opacity-80 backdrop-blur-sm">
       <div className="mx-auto flex max-w-screen-xl flex-wrap items-center justify-between p-4">
         <a href="#" className="flex items-center">
           <span className="self-center whitespace-nowrap text-2xl font-semibold dark:text-white">
