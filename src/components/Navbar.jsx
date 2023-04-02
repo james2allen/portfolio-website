@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 export const Navbar = () => {
+  const [showNavbar, setShowNavbar] = useState(false);
   return (
     <nav>
       <div className="mx-auto flex max-w-screen-xl flex-wrap items-center justify-between p-4">
@@ -11,11 +12,11 @@ export const Navbar = () => {
           </span>
         </a>
         <button
-          data-collapse-toggle="navbar-dropdown"
           type="button"
           className="ml-3 inline-flex items-center rounded-lg p-2 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600 md:hidden"
           aria-controls="navbar-dropdown"
           aria-expanded="false"
+          onClick={() => setShowNavbar((state) => !state)}
         >
           <span className="sr-only">Open main menu</span>
           <svg
@@ -32,7 +33,12 @@ export const Navbar = () => {
             ></path>
           </svg>
         </button>
-        <div className="hidden w-full md:block md:w-auto" id="navbar-dropdown">
+        <div
+          className={`${
+            showNavbar ? "" : "hidden"
+          } w-full sm:absolute sm:mt-64 sm:max-w-screen-sm md:relative md:mt-0 md:block`}
+          id="navbar-dropdown"
+        >
           <ul className="mt-4 flex flex-col rounded-lg border border-gray-100 p-4 font-medium dark:border-gray-700 md:mt-0 md:flex-row md:space-x-8 md:border-0">
             <li>
               <Link
