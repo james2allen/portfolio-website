@@ -5,27 +5,30 @@ import {
   Routes,
   Navigate,
 } from "react-router-dom";
-import "./App.css";
-import { About } from "./components/About/About";
+import styles from "./App.module.scss";
+import { Blog } from "./components/Blog/Blog";
 import { Home } from "./components/Home/Home";
-import { Navbar } from "./components/Navbar";
+import { SideNav } from "./components/SideNav";
 import { Projects } from "./components/Projects/Projects";
 import { Resume } from "./components/Resume/Resume";
+import { ParallaxProvider } from "react-scroll-parallax";
 
 function App() {
   return (
-    <Router>
-      <div className="flex min-h-screen flex-col bg-gradient-to-b from-slate-800 to-slate-900">
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/resume" element={<Resume />} />
-          <Route path="*" element={<Navigate to="/" />} />
-        </Routes>
-      </div>
-    </Router>
+    <ParallaxProvider>
+      <Router>
+        <div className={styles.layout}>
+          <SideNav />
+          <Routes className={styles.page}>
+            <Route path="/" element={<Home />} />
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/resume" element={<Resume />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="*" element={<Navigate to="/" />} />
+          </Routes>
+        </div>
+      </Router>
+    </ParallaxProvider>
   );
 }
 
