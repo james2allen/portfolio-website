@@ -23,6 +23,12 @@
     background-size: 11vmin 11vmin;
     opacity: 0.5;
   }
+
+  @for $i from 1 through 3 {
+    &.activeItem#{$i} ~ .menuBackground {
+      background-position: 0% (-25% * ($i + 1));
+    }
+  }
 }
 
 .navItem {
@@ -49,5 +55,6 @@
   top: 0px;
   z-index: -1;
 
-  transition: opacity 800ms ease, background-size 800ms ease;
+  transition: opacity 800ms ease, background-size 800ms ease,
+    background-position 800ms ease;
 }
