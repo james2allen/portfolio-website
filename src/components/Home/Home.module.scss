@@ -13,3 +13,17 @@
   line-height: 2.5rem;
   font-weight: 700;
 }
+
+.textContainer {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 66.666667%;
+  color: white;
+}
+
+.welcomeText {
+  font-size: 6rem;
+  line-height: 1;
+  font-weight: 700;
+}

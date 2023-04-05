@@ -5,16 +5,16 @@ This is my personal portfolio <a href="https://james-allen-portfolio.vercel.app/
 This project was built using these technologies.
 
 - React.js
-- Tailwind
+- Scss modules
+- Graphql
 - VsCode
 - Vercel
 
 ## Features
 
 - Fully responsive
-- Parallax scrolling
 - Multi-page layout
-- Personal Blog
+- Coding Blog
 
 ## 🛠 Installation and Setup Instructions
 

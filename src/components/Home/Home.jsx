@@ -6,8 +6,8 @@ import homePic from "../../assets/placeholder-image.png";
 export const Home = () => {
   return (
     <div id="about" className={styles.homeContainer}>
-      <div className="flex w-8/12 justify-center">
-        <h1 className="text-8xl font-bold"> Welcome</h1>
+      <div className={styles.textContainer}>
+        <div className={styles.welcomeText}> Welcome</div>
 
         <AnimatedText
           type="words" // animate words or chars
@@ -20,7 +20,7 @@ export const Home = () => {
           animationType="float"
           interval={0.06}
           duration={0.8}
-          tag="p"
+          tag="div"
           className={`animated-paragraph ${styles.textStyleMedium}`}
           includeWhiteSpaces
           threshold={0.1}
