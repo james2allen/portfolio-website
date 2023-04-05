@@ -4,8 +4,8 @@ import styles from "./SideNav.module.scss";
 
 export const SideNav = () => {
   return (
-    <nav>
-      <div className={styles.nav}>
+    <nav className={styles.nav}>
+      <div className={styles.navItems}>
         <Link className={styles.navItem} to={"/"}>
           Home
         </Link>
@@ -19,6 +19,7 @@ export const SideNav = () => {
           Resume
         </Link>
       </div>
+      <div className={styles.menuBackground}></div>
     </nav>
   );
 };

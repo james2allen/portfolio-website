@@ -8,10 +8,46 @@
   padding: 1rem;
 }
 
+.navItems {
+  margin-left: clamp(4rem, 8vw, 12rem);
+
+  &:hover > .navItem:hover {
+    opacity: 1;
+  }
+
+  &:hover > .navItem {
+    opacity: 0.3;
+  }
+
+  &:hover ~ .menuBackground {
+    background-size: 11vmin 11vmin;
+    opacity: 0.5;
+  }
+}
+
 .navItem {
   color: white;
   font-size: clamp(3rem, 8vw, 5rem);
   display: block;
   text-decoration: none;
   padding: clamp(0.25rem, 0.5vw, 1rem) 0rem;
+}
+
+.menuBackground {
+  height: 100vh;
+  width: 100vh;
+
+  background-image: radial-gradient(
+    rgba(255, 255, 255, 0.1) 9%,
+    transparent 9%
+  );
+
+  background-position: 0% 0%;
+  background-size: 12vmin 12vmin;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  z-index: -1;
+
+  transition: opacity 800ms ease, background-size 800ms ease;
 }
