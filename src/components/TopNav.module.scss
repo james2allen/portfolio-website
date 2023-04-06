@@ -1,0 +1,30 @@
+.navBar {
+  display: flex;
+  height: 4rem;
+  background: white;
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  align-items: center;
+  z-index: 4;
+}
+
+.navItems {
+  padding: 0 4rem;
+}
+
+.navItem {
+  font-size: larger;
+  text-decoration: none;
+  padding: 1rem 1rem;
+  color: black;
+
+  &:hover {
+    background-color: #ea580c;
+  }
+}
+
+.navFill {
+  flex-grow: 1;
+}

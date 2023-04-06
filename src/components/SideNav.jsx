@@ -1,21 +1,18 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 import styles from "./SideNav.module.scss";
 import { clsx } from "clsx";
-import { useEffect } from "react";
 
 export const SideNav = () => {
   const [activeItem, setActiveItem] = useState(-1);
-
-  useEffect(() => {
-    console.log(activeItem);
-  }, [activeItem]);
+  const location = useLocation();
 
   return (
     <nav className={styles.nav}>
       <div
         className={clsx(
           styles.navItems,
+          location.pathname !== "/" && styles.hiddenNav,
           activeItem === 0 && styles.activeItem0,
           activeItem === 1 && styles.activeItem1,
           activeItem === 2 && styles.activeItem2,
