@@ -5,8 +5,8 @@ This is my personal portfolio <a href="https://james-allen-portfolio.vercel.app/
 This project was built using these technologies.
 
 - React.js
-- Scss modules
 - Graphql
+- TailwindCss
 - VsCode
 - Vercel
 
@@ -18,9 +18,9 @@ This project was built using these technologies.
 
 ## 🛠 Installation and Setup Instructions
 
-1. Installation: `npm install`
+1. Installation: `yarn`
 
-2. In the project directory, you can run: `npm start`
+2. In the project directory, you can run: `yarn start`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.

@@ -2,7 +2,6 @@ import React from "react";
 import { GraphQLClient, gql } from "graphql-request";
 import { useEffect } from "react";
 import { useState } from "react";
-import styles from "./Blog.module.scss";
 import { BlogCard } from "./BlogCard";
 
 const graphcms = new GraphQLClient(
@@ -34,7 +33,7 @@ export const Blog = () => {
   }, []);
 
   return (
-    <div className={styles.blogPage}>
+    <div className="flex">
       {posts?.map((blog) => (
         <BlogCard
           key={blog.id}

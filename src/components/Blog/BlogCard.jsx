@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import styles from "./BlogCard.module.scss";
 
 export const BlogCard = ({
   title,
@@ -10,7 +9,7 @@ export const BlogCard = ({
   slug,
 }) => {
   return (
-    <div className={styles.card}>
+    <div className="">
       <Link to={`/blog/${slug}`}>
         <div></div>
       </Link>
