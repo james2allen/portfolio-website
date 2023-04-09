@@ -10,14 +10,16 @@ const graphcms = new GraphQLClient(
   }
 );
 
-const BLOG_LIST_QUERY = gql`
-  {
-    posts {
+const BLOG_DETAILS_QUERY = gql`
+  query Post($slug: String!) {
+    post(where: { slug: $slug }) {
       id
       title
       datePublished
       slug
-      blurb
+      content {
+        html
+      }
       altText
       coverPhoto {
         url
@@ -26,9 +28,9 @@ const BLOG_LIST_QUERY = gql`
   }
 `;
 
-export function useGetBlogPosts() {
-  return useQuery("get-posts", async () => {
-    const response = await graphcms.request(BLOG_LIST_QUERY);
+export function useGetBlogPostBySlug(variables) {
+  return useQuery("get-post", async () => {
+    const response = await graphcms.request(BLOG_DETAILS_QUERY, variables);
     return response;
   });
 }
