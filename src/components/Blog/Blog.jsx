@@ -1,47 +1,32 @@
 import React from "react";
-import { GraphQLClient, gql } from "graphql-request";
 import { useEffect } from "react";
-import { useState } from "react";
+import { useGetBlogPosts } from "../../graphql/useGetBlogPosts";
 import { BlogCard } from "./BlogCard";
 
-const graphcms = new GraphQLClient(
-  "https://ca-central-1.cdn.hygraph.com/content/clg3x6kr61rd901t3ej26d2k2/master",
-  {
-    headers: {
-      authorization: `Bearer ${process.env.REACT_APP_AUTH_TOKEN}`,
-    },
-  }
-);
-
-const QUERY = gql`
-  {
-    posts {
-      id
-      title
-      datePublished
-      slug
-    }
-  }
-`;
-
 export const Blog = () => {
-  const [posts, setPosts] = useState([]);
+  const { data, error, isLoading, isSuccess } = useGetBlogPosts();
 
-  useEffect(async () => {
-    const { blogPosts } = await graphcms.request(QUERY);
-    setPosts(blogPosts);
-  }, []);
+  useEffect(() => {
+    console.log(data);
+    console.log(error);
+    console.log(isLoading);
+  }, [data, isLoading, error]);
 
   return (
-    <div className="flex">
-      {posts?.map((blog) => (
-        <BlogCard
-          key={blog.id}
-          title={blog.title}
-          datePublished={blog.datePublished}
-          slug={blog.slug}
-        />
-      ))}
+    <div className="mx-auto max-w-screen-lg px-4 py-8 lg:px-12 lg:py-16">
+      <div className="mt-16">
+        {data?.posts?.map((blog) => (
+          <BlogCard
+            key={blog.id}
+            title={blog.title}
+            blurb={blog.blurb}
+            altText={blog.altText}
+            datePublished={blog.datePublished}
+            coverPhoto={blog.coverPhoto}
+            slug={blog.slug}
+          />
+        ))}
+      </div>
     </div>
   );
 };

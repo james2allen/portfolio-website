@@ -16,22 +16,22 @@ export const TopNav = () => {
         <button
           onClick={() => setNavToggle((current) => !current)}
           type="button"
-          class="ml-3 inline-flex items-center rounded-lg p-2 text-sm text-gray-600 hover:text-orange-500 focus:outline-none focus:ring-2 focus:ring-gray-200 md:hidden"
+          className="ml-3 inline-flex items-center rounded-lg p-2 text-sm text-gray-600 hover:text-orange-500 focus:outline-none focus:ring-2 focus:ring-gray-200 md:hidden"
           aria-controls="navbar-default"
           aria-expanded="false"
         >
-          <span class="sr-only">Open main menu</span>
+          <span className="sr-only">Open main menu</span>
           <svg
-            class="h-6 w-6"
+            className="h-6 w-6"
             aria-hidden="true"
             fill="currentColor"
             viewBox="0 0 20 20"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              fill-rule="evenodd"
+              fillRule="evenodd"
               d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-              clip-rule="evenodd"
+              clipRule="evenodd"
             ></path>
           </svg>
         </button>
@@ -41,7 +41,7 @@ export const TopNav = () => {
             navToggle ? "" : "hidden"
           } z-10 w-full text-gray-600 no-underline sm:flex-col sm:bg-white md:block md:w-auto`}
         >
-          <div class="mt-4 flex flex-col rounded-lg border p-4 font-bold md:mt-0 md:flex-row md:space-x-8 md:border-0 md:bg-white md:p-0 ">
+          <div className="mt-4 flex flex-col rounded-lg border p-4 font-bold md:mt-0 md:flex-row md:space-x-8 md:border-0 md:bg-white md:p-0 ">
             <Link className="p-3 hover:text-orange-500" to={"/"}>
               Home
             </Link>

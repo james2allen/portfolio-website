@@ -23,9 +23,9 @@ export const Home = () => {
       id="about"
       className="mx-auto max-w-screen-lg px-4 py-8 lg:px-12 lg:py-16"
     >
-      <div className="mt-40 flex flex-col-reverse rounded-md bg-white p-14 md:flex-row">
+      <div className="mt-40 flex flex-col-reverse rounded-xl bg-white p-14 md:flex-row">
         <div className="flex flex-col pr-16 pt-14 md:pt-0">
-          <div className="text-3xl font-bold">Hello, it's me</div>
+          <div className="text-3xl font-bold">Welcome, I am</div>
           <span className="pt-6 text-6xl font-bold">
             James <span className="text-orange-600">Allen</span>
           </span>
@@ -41,7 +41,7 @@ export const Home = () => {
           <button
             variant="primary"
             target="_blank"
-            className="mt-12 w-44 rounded-lg bg-orange-600 p-4 text-white hover:bg-orange-800"
+            className="mt-12 w-44 rounded-xl bg-orange-600 p-4 text-white hover:bg-orange-800"
             onClick={() =>
               handleDownload(resume_link, "James_Allen_Resume.pdf")
             }
