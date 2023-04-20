@@ -7,7 +7,7 @@ export const Blog = () => {
 
   return (
     <div className="mx-auto max-w-screen-lg px-4 py-8 lg:px-12 lg:py-16">
-      <div className="mt-16">
+      <div className="mt-16 flex flex-col-reverse">
         {data?.posts?.map((blog) => (
           <BlogCard
             key={blog.id}

@@ -18,7 +18,7 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <Router>
-        <div className="min-h-screen bg-sky-100">
+        <div className="min-h-screen bg-slate-800">
           <TopNav />
           <Routes>
             <Route path="/" element={<Home />} />
