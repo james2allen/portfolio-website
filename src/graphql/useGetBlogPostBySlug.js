@@ -17,9 +17,7 @@ const BLOG_DETAILS_QUERY = gql`
       title
       datePublished
       slug
-      content {
-        html
-      }
+      content
       altText
       coverPhoto {
         url

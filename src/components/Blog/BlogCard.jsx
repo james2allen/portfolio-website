@@ -11,7 +11,7 @@ export const BlogCard = ({
   slug,
 }) => {
   return (
-    <div className="w-full">
+    <div className="w-full text-black">
       <Link to={`/blog/${slug}`}>
         <div className="mb-5 flex max-h-44 w-full flex-col items-center rounded-lg bg-white shadow hover:bg-gray-100 md:flex-row">
           <img
@@ -20,12 +20,8 @@ export const BlogCard = ({
             alt={altText}
           />
           <div className="flex flex-col justify-between p-4 leading-normal">
-            <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-700">
-              {title}
-            </h5>
-            <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
-              {blurb}
-            </p>
+            <h1 className="mb-2 font-bold tracking-tight">{title}</h1>
+            <p className="mb-3 font-normal">{blurb}</p>
           </div>
         </div>
       </Link>
